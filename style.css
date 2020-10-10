@@ -1,3 +1,10 @@
-h1 {
-    color: red;
+.navbar .navbar-brand {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
+
+.btn .btn-primary:hover {
+    transition: all .3s ease-in-out;
 }

@@ -8,3 +8,8 @@
 .btn .btn-primary:hover {
     transition: all .3s ease-in-out;
 }
+
+.card {
+    width: 710;
+    height: 19rem;
+}

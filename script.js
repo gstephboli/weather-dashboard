@@ -27,15 +27,9 @@ $(document).ready(function () {
     }).then(function (response) {
       console.log(response);
       //   console.log(queryURL);
-      var temperature = $("<div></div>");
-      temperature.text("Temperature: " + response.main.temp + " ℉");
-      $("#current").append(temperature);
-      var humidity = $("<div></div>");
-      humidity.text("Humidity: " + response.main.humidity + "%");
-      $("#current").append(humidity);
-      var windSpeed = $("<div></div>");
-      windSpeed.text("Wind Speed: " + response.wind.speed + " MPH");
-      $("#current").append(windSpeed);
+      $("#temperature").text("Temperature: " + response.main.temp + " ℉");
+      $("#humidity").text("Humidity: " + response.main.humidity + "%");
+      $("#windspeed").text("Wind Speed: " + response.wind.speed + " MPH");
 
       var lat = response.coord.lat;
       var lon = response.coord.lon;

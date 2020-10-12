@@ -28,7 +28,7 @@ $(document).ready(function () {
       console.log(response);
       //   console.log(queryURL);
       var temperature = $("<div></div>");
-      temperature.text("Temperature: " + response.main.temp + "");
+      temperature.text("Temperature: " + response.main.temp + " ℉");
       $("#current").append(temperature);
       var humidity = $("<div></div>");
       humidity.text("Humidity: " + response.main.humidity + "%");
@@ -36,15 +36,30 @@ $(document).ready(function () {
       var windSpeed = $("<div></div>");
       windSpeed.text("Wind Speed: " + response.wind.speed + " MPH");
       $("#current").append(windSpeed);
-      //   getUV(response.city.coord.lat, response.city.coord.lon);
-      //   var uvIndex = $("<div></div>");
-      //   uvIndex.text(
-      //     "Temperature: " + response.city.coord.lat,
-      //     response.city.coord.lon
-      //   );
-      //   $("#current").append(uvIndex);
-      //   $("#current").empty();
-      //   var mainDate = moment().format("L");
+
+      var lat = response.coord.lat;
+      var lon = response.coord.lon;
+      var queryURLUV =
+        "https://api.openweathermap.org/data/2.5/uvi?lat=" +
+        lat +
+        "&lon=" +
+        lon +
+        "&units=imperial&appid=64e3a7c79c8f571f0448e808d7de35f8";
+      console.log(lat, lon);
+
+      $.ajax({
+        url: queryURLUV,
+        method: "GET",
+      }).then(function (response) {
+        console.log(response);
+        console.log(queryURLUV);
+        $("#uvindex-display").empty();
+        var uviResults = response.value;
+        var uviEl = $("<div></div>").text(
+          "UV Index: " + response.value
+        );
+        $("#uvindex-display").html(uviEl);
+      });
     });
   }
 
@@ -86,21 +101,4 @@ $(document).ready(function () {
   //       $("#buttons-view").append(a);
   //     }
   //   }
-  //   function getUV(lat , lon) {
-  //     var queryURL =
-  //       "https://api.openweathermap.org/data/2.5/uvi?lat=" +
-  //       lat +
-  //       "&lon=" +
-  //       lon +
-  //       "&units=imperial&appid=64e3a7c79c8f571f0448e808d7de35f8";
-  //       console.log(lat, lon);
-  //       $.ajax({
-  //           url: queryURL,
-  //           method: "GET",
-  //       }).then(function(response){
-  //           console.log(response);
-  //           var uvIndex = $("<div></div>");
-  //           uvIndex.text("UV Index:" + response.coord.lat + response.coord.lon);
-  //           $("#current").append(uvIndex);
-  //       })
 });

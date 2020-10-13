@@ -10,10 +10,12 @@
     <title>Weather Dashboard</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script
-      src="https://kit.fontawesome.com/04d267f7ba.js"
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
-    ></script>
+    />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -29,55 +31,44 @@
       </nav>
     </header>
 
-    <div class="container">
-      <div class="clearfix row">
-        <div class="col-sm-4 float-left">
-          <h5>Search for a City:</h5>
-        </div>
-      </div>
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-4">
-          <form class="form-inline" id="city-form">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="City Name"
-              aria-label="Search"
-              id="city-input"
-            />
-            <button
-              id="submitWeather"
-              class="btn btn-primary my-2 my-sm-0"
-              type="submit"
-            >
-              <i class="icon fas fa-search"></i>
-            </button>
-          </form>
-          <form id="search-history" class="mt-1">
-            <!----------- Search history goes here ---------->
-          </form>
-        </div>
-        <!-------- Current weather goes here --------->
-        <div class="col-sm-8 float-right">
+        <aside class="col-sm-4 city-input">
+          <div class="row pt-2">
+            <form class="col-9 ml-1">
+              <h5>Search for a City:</h5>
+              <div class="input-group">
+                <input class="form-control" type="search" id="searchCity" />
+                <div class="input-group-append">
+                  <button class="btn btn-primary" id="search">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="row list-group col-12 ml-1 mt-3" id="prevSearches"></div>
+        </aside>
+        <div class="col-8 weather">
           <div
-            class="card bg-light text-dark p-2 rem shadow-lg p-3 mb-5 bg-white rounded"
+            class="row d-block border border-right-0 border-color my-3 ml-1 p-3"
           >
-            <div id="current">
-              
+            <div class="row">
+              <h2 id="city-name"></h2>
+              <img id="weatherIcon" />
             </div>
-            <div id="uvindex-display"></div>
+            <p id="temperature"></p>
+            <p id="humidity"></p>
+            <p id="wind"></p>
+            <p id="uvIndex"></p>
           </div>
-        </div>
-        <br />
-        <div class="float-right">
-          <h2>5-Day Forecast:</h2>
-          <div id="5day" class="row">
-            <!-------- 5 Day Forecast goes here --------->
+          <div class="row pl-3">
+            <h2>5-Day Forecast</h2>
           </div>
+          <div class="row card-deck"></div>
         </div>
       </div>
     </div>
-
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

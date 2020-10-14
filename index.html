@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -22,15 +21,17 @@
       crossorigin="anonymous"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <title>Weather Dashbaord</title>
+    <title>Weather Dashboard</title>
   </head>
   <body>
-    <div class="container-fluid text-center text-light bg-dark">
+    <!-- Header of the webpage -->
+    <header class="container-fluid text-center text-light bg-dark">
       <h1>Weather Dashboard</h1>
-    </div>
-    <div class="container">
+    </header>
+    <!-- The bod of the webpage with the search city, current forecast and 5 day forecast sections -->
+    <main class="container">
       <div class="clearfix">
-        <div class="col-4 float-left">
+        <section class="col-4 float-left">
           <nav
             class="navbar navbar-light bg-light shadow-lg p-3 mb-5 bg-white rounded"
           >
@@ -55,8 +56,8 @@
               <!---------------------- Search history goes here  ------------------------------------>
             </form>
           </nav>
-        </div>
-        <div class="col-8 float-right">
+        </section>
+        <section class="col-8 float-right">
           <div
             class="card bg-light text-dark p-2 rem shadow-lg p-3 mb-5 bg-white rounded"
             style="width: 710; height: 19rem"
@@ -66,16 +67,14 @@
             <div id="uvl-display"></div>
           </div>
           <br />
-          <h2>5-Day Forcast:</h2>
+          <h2>5-Day Forecast:</h2>
           <div id="5day" class="row">
-            <!----------------------  5 Day forcast goes here ------------------------------------>
+            <!----------------------  5 Day Forecast goes here ------------------------------------>
           </div>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

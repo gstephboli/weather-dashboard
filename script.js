@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    moment().format("L");
   
     //-----------------------Search Function for Current City Weather----------------------------------//
     function searchCity(cityname) {
@@ -79,8 +78,6 @@ $(document).ready(function () {
           method: "GET",
         }).then(function (response) {
           $("#uvl-display").empty();
-          var uvlresults = response.value;
-          //create HTML for new div
           var uvlEl = $("<button class='btn bg-danger'>").text(
             "UV Index: " + response.value
           );
@@ -89,7 +86,7 @@ $(document).ready(function () {
         });
       });
   
-      //--------------------------------------------5 Day frocast call ---------------------------------------//
+      //--------------------------------------------5 Day forecast call ---------------------------------------//
   
       $.ajax({
         url: queryURLforcast,
@@ -99,9 +96,8 @@ $(document).ready(function () {
         var results = response.list;
         //empty 5day div--------
         $("#5day").empty();
-        //create HTML for 5day forcast................
+        //create HTML for 5day forecast................
         for (var i = 0; i < results.length; i += 9) {
-          // Creating a div
           var fiveDayDiv = $(
             "<div class='card shadow-lg text-white bg-primary mx-auto mb-10 p-2' style='width: 8.5rem; height: 11rem;'>"
           );
@@ -111,8 +107,6 @@ $(document).ready(function () {
           var setD = date.substr(0, 10);
           var temp = results[i].main.temp;
           var hum = results[i].main.humidity;
-  
-          //creating a tags with the result items information.....
   
           //creating tags with the result items information.....
           var h5date = $("<h5 class='card-title'>").text(setD);
@@ -166,7 +160,6 @@ $(document).ready(function () {
     //----------------------------------------Event handler for user city search-----------------------//
   
     $("#select-city").on("click", function (event) {
-      // Preventing the button from trying to submit the form......
       event.preventDefault();
       // Storing the city name........
       var cityInput = $("#city-input").val().trim();
@@ -189,10 +182,9 @@ $(document).ready(function () {
       psearch.append(searchDiv);
       $("#searchhistory").prepend(psearch);
     }
-    //Event deligation...
+    //Event ...
     $("#searchhistory").on("click", ".btn", function (event) {
       event.preventDefault();
-      console.log($(this).text());
       searchCity($(this).text());
     });
   });

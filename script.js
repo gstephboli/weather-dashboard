@@ -22,9 +22,11 @@ $(document).ready(function () {
       //create HTML for city information......
       var cityNameEl = $("<h2>").text(response.name);
       var displayMainDate = cityNameEl.append(" " + mainDate);
-      var tempEL = $("<p>").text("Tempraturer: " + response.main.temp);
-      var humEl = $("<p>").text("Humidity: " + response.main.humidity);
-      var windEl = $("<p>").text("Wind Speed: " + response.wind.speed);
+      var tempEL = $("<p>").text(
+        "Tempraturer: " + response.main.temp + " \xB0F"
+      );
+      var humEl = $("<p>").text("Humidity: " + response.main.humidity + "%");
+      var windEl = $("<p>").text("Wind Speed: " + response.wind.speed + " MPH");
       var currentweather = response.weather[0].main;
 
       if (currentweather === "Rain") {
@@ -121,8 +123,8 @@ $(document).ready(function () {
 
         //creating tags with the result items information.....
         var h5date = $("<h5 class='card-title'>").text(setD);
-        var pTemp = $("<p class='card-text'>").text("Temp: " + temp);
-        var pHum = $("<p class='card-text'>").text("Humidity " + hum);
+        var pTemp = $("<p class='card-text'>").text("Temp: " + temp + " \xB0F");
+        var pHum = $("<p class='card-text'>").text("Humidity " + hum + "%");
         var weather = results[i].weather[0].main;
 
         if (weather === "Rain") {
@@ -191,7 +193,7 @@ $(document).ready(function () {
     ).text(lastSearch);
     var psearch = $("<div>");
     psearch.append(searchDiv);
-    $("#searchhistory").prepend(psearch);
+    $("#searchhistory").append(psearch);
   }
   //Event ...
   $("#searchhistory").on("click", ".btn", function (event) {

@@ -78,7 +78,7 @@ $(document).ready(function () {
       }).then(function (response) {
         $("#uvl-display").empty();
         var uvlEl = $("<div>").addClass("lead uv-index").text("UV Index: ");
-        var uvValue = $("<span class='badge id=current-uv-level'>").text(
+        var uvValue = $("<span class='badge' id='current-uv-level'>").text(
           response.value
         );
         uvlEl.append(uvValue);
@@ -87,12 +87,13 @@ $(document).ready(function () {
         $("#uvl-display").html(uvlEl);
 
         if (response.value >= 0 && response.value < 3) {
-          $(uvValue).addClass("favorable p-2");
+          uvValue.addClass("favorable p-2");
         } else if (response.value >= 3 && response.value < 6) {
-          $(uvValue).addClass("severe p-2");
+          uvValue.addClass("moderate p-2");
         } else {
-          $(uvValue).addClass("moderate p-2");
+          uvValue.addClass("severe p-2");
         }
+        newDiv.append(uvlEl);
       });
     });
 

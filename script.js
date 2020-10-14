@@ -23,7 +23,7 @@ $(document).ready(function () {
       var cityNameEl = $("<h2>").text(response.name);
       var displayMainDate = cityNameEl.append(" " + mainDate);
       var tempEL = $("<p>").text(
-        "Tempraturer: " + response.main.temp + " \xB0F"
+        "Temperature: " + response.main.temp + " \xB0F"
       );
       var humEl = $("<p>").text("Humidity: " + response.main.humidity + "%");
       var windEl = $("<p>").text("Wind Speed: " + response.wind.speed + " MPH");
@@ -159,7 +159,6 @@ $(document).ready(function () {
           icon.attr("style", "height: 40px; width: 40px");
         }
 
-        //append items to.......
         fiveDayDiv.append(h5date);
         fiveDayDiv.append(icon);
         fiveDayDiv.append(pTemp);
@@ -195,7 +194,7 @@ $(document).ready(function () {
     psearch.append(searchDiv);
     $("#searchhistory").append(psearch);
   }
-  //Event ...
+  
   $("#searchhistory").on("click", ".btn", function (event) {
     event.preventDefault();
     searchCity($(this).text());

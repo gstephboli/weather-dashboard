@@ -6,7 +6,7 @@ This assignments difficulty, for me, really layed in what approach I wanted for 
 
 ## Installation
 
-Fork repository at [gstephboli github](https://github.com/gstephboli/weather-dashboard) .
+Fork repository at [gstephbolivar github](https://github.com/gstephbolivar/weather-dashboard) .
 
 Clone repository to local terminal.
 
@@ -16,7 +16,7 @@ Happy editing!
 
 ## Usage
 
-This [website] (https://gstephboli.github.io/weather-dashboard/) allows a user to input a city and find out the current weather in that specified city like temperature, humidity, wind speed and the UV index. The user also will see a five day forecast showing the temperature and humidity each day. 
+This [website] (https://gstephbolivar.github.io/weather-dashboard/) allows a user to input a city and find out the current weather in that specified city like temperature, humidity, wind speed and the UV index. The user also will see a five day forecast showing the temperature and humidity each day. 
 
 ![Homepage](./images/homepage.png)
 ![FirstSearch](./images/first-search.png)
@@ -34,7 +34,7 @@ I credit the following:
 ## Contact
 
 ####  **Stephany Bolivar** 
-*  **Github:** [@gstephboli](https://github.com/gstephboli)
+*  **Github:** [@gstephbolivar](https://github.com/gstephbolivar)
 *  **Email:** [g.stephanybolivar@gmail.com](g.stephanybolivar@gmail.com)
 
 ## License

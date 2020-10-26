@@ -31,6 +31,11 @@ I credit the following:
 [MomentJS] (https://momentjs.com/)
 [UVIndex] (https://19january2017snapshot.epa.gov/sunsafety/uv-index-scale-1_.html#:~:text=A%20UV%20Index%20reading%20of%206%20to%207%20means%20high,%2C%20and%20UV%2Dblocking%20sunglasses.)
 
+## Contact
+
+####  **Stephany Bolivar** 
+*  **Github:** [@gstephboli](https://github.com/gstephboli)
+*  **Email:** [g.stephanybolivar@gmail.com](g.stephanybolivar@gmail.com)
 
 ## License
 
